@@ -24,7 +24,7 @@ mkdir -p ${CMAKE_BUILD_DIR}/debug
 
 # Release
 cd ${CMAKE_BUILD_DIR}/release
-mkdir ${BUILD_SUBDIR_NAME}
+mkdir -p ${BUILD_SUBDIR_NAME}
 cd ${BUILD_SUBDIR_NAME}
 cmake -DCMAKE_BUILD_TYPE=Release ../../..
 make
@@ -34,7 +34,7 @@ objdump -dC prog > prog.asm
 
 # Debug
 cd ../debug
-mkdir ${BUILD_SUBDIR_NAME}
+mkdir -p ${BUILD_SUBDIR_NAME}
 cd ${BUILD_SUBDIR_NAME}
 cmake -DCMAKE_BUILD_TYPE=Debug ../../..
 make
