@@ -19,7 +19,7 @@ mkdir -p ${ORIGIN}/${CMAKE_BUILD_DIR}/{release,debug}
 ## BUILD
 
 # Release
-cd ${ORIGIN}/&{CMAKE_BUILD_DIR}/release
+cd ${ORIGIN}/${CMAKE_BUILD_DIR}/release
 mkdir -p ${BUILD_SUBDIR_NAME}
 cd ${BUILD_SUBDIR_NAME}
 cmake -DCMAKE_BUILD_TYPE=Release ${ORIGIN}
@@ -29,7 +29,7 @@ cd ..
 objdump -dC ${EXEC_NAME} > ${EXEC_NAME}.asm
 
 # Debug
-cd ${ORIGIN}/&{CMAKE_BUILD_DIR}/debug
+cd ${ORIGIN}/${CMAKE_BUILD_DIR}/debug
 mkdir -p ${BUILD_SUBDIR_NAME}
 cd ${BUILD_SUBDIR_NAME}
 cmake -DCMAKE_BUILD_TYPE=Debug ${ORIGIN}
