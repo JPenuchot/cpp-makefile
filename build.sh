@@ -16,12 +16,12 @@ mkdir -p ${ORIGIN}/${CMAKE_BUILD_DIR}/{release,debug}
 
 # Release
 cd ${ORIGIN}/${CMAKE_BUILD_DIR}/release
-cmake -DCMAKE_BUILD_TYPE=Release ${ORIGIN}
-make
+cmake -DCMAKE_BUILD_TYPE=Release -G Ninja ${ORIGIN}
+ninja
 objdump -dC ${EXEC_NAME} > ${EXEC_NAME}.asm
 
 # Debug
 cd ${ORIGIN}/${CMAKE_BUILD_DIR}/debug
-cmake -DCMAKE_BUILD_TYPE=Debug ${ORIGIN}
-make
+cmake -DCMAKE_BUILD_TYPE=Debug -G Ninja ${ORIGIN}
+ninja
 objdump -dC ${EXEC_NAME} > ${EXEC_NAME}.asm
