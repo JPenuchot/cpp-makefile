@@ -3,25 +3,19 @@
 ## Managing default directories, args etc...
 
 ORIGIN=$(pwd)
-
-EXEC_NAME="prog"
 CMAKE_BUILD_DIR="bin"
-BUILD_SUBDIR_NAME=".build_files"
+EXEC_NAME="prog"
 
-## Making directories
-
-mkdir -p ${ORIGIN}/${CMAKE_BUILD_DIR}/{release,debug}
+function build_for_type
+{
+  mkdir -p ${ORIGIN}/${CMAKE_BUILD_DIR}/$1
+  cd ${ORIGIN}/${CMAKE_BUILD_DIR}/$1
+  cmake -DCMAKE_BUILD_TYPE=$1 -G Ninja ${ORIGIN}
+  ninja
+  objdump -dC ${EXEC_NAME} > ${EXEC_NAME}.asm
+}
 
 ## BUILD
 
-# Release
-cd ${ORIGIN}/${CMAKE_BUILD_DIR}/release
-cmake -DCMAKE_BUILD_TYPE=Release -G Ninja ${ORIGIN}
-ninja
-objdump -dC ${EXEC_NAME} > ${EXEC_NAME}.asm
-
-# Debug
-cd ${ORIGIN}/${CMAKE_BUILD_DIR}/debug
-cmake -DCMAKE_BUILD_TYPE=Debug -G Ninja ${ORIGIN}
-ninja
-objdump -dC ${EXEC_NAME} > ${EXEC_NAME}.asm
+build_for_type Release
+build_for_type Debug
