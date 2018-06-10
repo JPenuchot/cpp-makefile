@@ -3,8 +3,7 @@ project(Proj)
 
 # Adding compiler optimizations
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} \
-  -std=c++17")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -fPIC")
 
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} \
   -O0")
