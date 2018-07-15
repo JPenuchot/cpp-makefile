@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.9)
-project(Proj)
+project(prog)
 
 # Adding compiler optimizations
 
@@ -15,4 +15,4 @@ include_directories("include/")
 # Adding sources
 
 file(GLOB_RECURSE SOURCES "src/*.cpp")
-add_executable(prog ${SOURCES})
+add_executable(${PROJECT_NAME} ${SOURCES})
