@@ -6,7 +6,7 @@ ORIGIN=$(pwd)
 CMAKE_BUILD_DIR="bin"
 EXEC_NAME="prog"
 
-function build_for_type
+function build_for_config
 {
   mkdir -p ${ORIGIN}/${CMAKE_BUILD_DIR}/$1
   cd ${ORIGIN}/${CMAKE_BUILD_DIR}/$1
@@ -17,5 +17,5 @@ function build_for_type
 
 ## BUILD
 
-build_for_type Release
-build_for_type Debug
+build_for_config Release
+build_for_config Debug
