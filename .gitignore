@@ -1,4 +1,8 @@
-# Build dir
+## Binaries & Executable
 
-build/
-bin/
+*.o
+prog
+
+## Compile commands
+
+*.o.json
