@@ -5,4 +5,5 @@ prog
 
 ## Compile commands
 
+compile_commands.json
 *.o.json
