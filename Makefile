@@ -16,7 +16,7 @@ OBJ         = $(CPP_OBJ) $(C_OBJ)
 
 COMPILE_DB  = $(OBJ:.o=.o.json)
 
-all: options jpp
+all: options $(NAME)
 
 # Header dependencies
 #src/main.o:
@@ -46,11 +46,11 @@ options:
 	@echo "CPP         = $(CPP)"
 	@echo
 
-jpp: $(OBJ)
+$(NAME): $(OBJ)
 	$(CPP) -o $@ $(OBJ) $(JP_LD_FLAGS)
 	cat $(COMPILE_DB) > compile_commands.json
 
 clean:
-	rm -f jpp compile_commands.json $(COMPILE_DB) $(OBJ)
+	rm -f $(NAME) compile_commands.json $(COMPILE_DB) $(OBJ)
 
 .PHONY: all options clean

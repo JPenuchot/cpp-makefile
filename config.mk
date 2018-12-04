@@ -1,4 +1,5 @@
 # Project version
+NAME		= prog
 VERSION = 0.0.1
 
 # Paths
