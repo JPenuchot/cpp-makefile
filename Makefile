@@ -47,8 +47,12 @@ options:
 	@echo
 
 $(NAME): $(OBJ)
+ifeq ($(CPP), clang++)
 	$(CPP) -o $@ $(OBJ) $(JP_LD_FLAGS)
 	cat $(COMPILE_DB) > compile_commands.json
+else
+	$(CPP) -o $@ $(OBJ) $(JP_LD_FLAGS)
+endif
 
 clean:
 	rm -f $(NAME) compile_commands.json $(COMPILE_DB) $(OBJ)

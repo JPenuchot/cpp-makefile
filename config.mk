@@ -19,7 +19,6 @@ LIBS     = -lm
 COMMON_FLAGS = -DVERSION=\"$(VERSION)\" \
 							 -Wall -Wextra -Werror \
 							 -O3 -march=native \
-							 -MJ $@.json	\
 
 COMPILE_DB_GEN_FLAG = -MJ $@.json
 
