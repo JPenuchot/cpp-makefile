@@ -7,8 +7,8 @@ include config.mk
 #C_HEADERS   = $(shell find src -name "*.h")
 #HEADERS     = $(CPP_HEADERS) $(C_HEADERS)
 
-CPP_SRC     = $(shell find src/ -name "*.cpp")
-C_SRC       = $(shell find src/ -name "*.c")
+CPP_SRC     = $(shell find src -name "*.cpp")
+C_SRC       = $(shell find src -name "*.c")
 
 CPP_OBJ     = $(CPP_SRC:.cpp=.o)
 C_OBJ       = $(C_SRC:.c=.o)

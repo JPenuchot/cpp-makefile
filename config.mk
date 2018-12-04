@@ -23,8 +23,8 @@ COMMON_FLAGS = -DVERSION=\"$(VERSION)\" \
 
 COMPILE_DB_GEN_FLAG = -MJ $@.json
 
-CPP_FLAGS    = -std=c++17 $(COMMON_FLAGS)
-C_FLAGS      = -std=c11 $(COMMON_FLAGS)
+CPP_FLAGS    = $(COMMON_FLAGS) -std=c++17
+C_FLAGS      = $(COMMON_FLAGS) -std=c11
 LD_FLAGS     = -fPIC
 
 JP_CPP_FLAGS = $(CPP_INCS) $(CPP_FLAGS)
