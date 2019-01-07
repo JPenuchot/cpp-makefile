@@ -3,16 +3,16 @@
 include config.mk
 
 # Sources
-CPP_SRC     = $(shell find src -name "*.cpp")
-C_SRC       = $(shell find src -name "*.c")
+CPP_SRC = $(shell find src -name *.cpp)
+C_SRC   = $(shell find src -name *.c)
 
 # Objects
-CPP_OBJ     = $(CPP_SRC:.cpp=.o)
-C_OBJ       = $(C_SRC:.c=.o)
-OBJ         = $(CPP_OBJ) $(C_OBJ)
+CPP_OBJ = $(CPP_SRC:.cpp=.o)
+C_OBJ   = $(C_SRC:.c=.o)
+OBJ     = $(CPP_OBJ) $(C_OBJ)
 
 # Dependency files
-DEPS        = $(OBJ:.o=.d)
+DEPS    = $(OBJ:.o=.d)
 
 all: $(NAME)
 
