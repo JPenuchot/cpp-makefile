@@ -3,6 +3,10 @@
 *.o
 prog
 
+## Dependencies
+
+*.d
+
 ## Compile commands
 
 compile_commands.json
