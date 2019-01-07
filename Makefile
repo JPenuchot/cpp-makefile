@@ -4,8 +4,8 @@ include config.mk
 
 # Sources
 
-CPP_SRC     = $(wildcard src/*.cpp)
-C_SRC       = $(wildcard src/*.c)
+CPP_SRC     = $(shell find src -name "*.cpp")
+C_SRC       = $(shell find src -name "*.c")
 
 CPP_OBJ     = $(CPP_SRC:.cpp=.o)
 C_OBJ       = $(C_SRC:.c=.o)
