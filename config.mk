@@ -18,7 +18,7 @@ LIBS     = -lm
 # Flags
 COMMON_FLAGS = -DVERSION=\"$(VERSION)\"\
 							 -Wall -Wextra -Werror\
-							 -O3 -march=native\
+							 -O3 -march=native
 
 ADD_CPP_FLAGS  = $(COMMON_FLAGS) -std=c++17
 ADD_C_FLAGS    = $(COMMON_FLAGS) -std=c11
