@@ -4,15 +4,15 @@ include config.mk
 
 # Sources
 CXXSRC = $(shell find src -name *.cpp)
-CCSRC   = $(shell find src -name *.c)
+CCSRC  = $(shell find src -name *.c)
 
 # Objects
 CXXOBJ = $(CXXSRC:.cpp=.o)
-CCOBJ   = $(CCSRC:.c=.o)
-OBJ     = $(CXXOBJ) $(CCOBJ)
+CCOBJ  = $(CCSRC:.c=.o)
+OBJ    = $(CXXOBJ) $(CCOBJ)
 
 # Dependency files
-DEPS    = $(OBJ:.o=.d)
+DEPS   = $(OBJ:.o=.d)
 
 all: $(NAME)
 
