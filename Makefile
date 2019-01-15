@@ -36,4 +36,10 @@ debug: $(NAME)
 clean:
 	rm -f $(NAME) $(OBJ) $(DEPS)
 
+run: $(NAME)
+	./$(NAME)
+
+dump: $(NAME)
+	objdump -dC $(NAME) > $(NAME).asm
+
 .PHONY: all clean
