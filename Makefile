@@ -18,9 +18,9 @@ all: $(NAME)
 
 # Compilation
 .cpp.o:
-	$(CXX) $(CXXFLAGS) -MMD -c -o $@ $<
+	$(CXX) $(COMMON_FLAGS) $(CXXFLAGS) -MMD -c -o $@ $<
 .c.o:
-	$(CC) $(CCFLAGS) -MMD -c -o $@ $<
+	$(CC) $(COMMON_FLAGS) $(CCFLAGS) -MMD -c -o $@ $<
 
 # Linking
 $(NAME): $(OBJ)
@@ -30,7 +30,7 @@ $(NAME): $(OBJ)
 -include $(DEPS)
 
 debug: CXXFLAGS += -DDEBUG -g
-debug: CCFLAGS += -DDEBUG -g
+debug: CCFLAGS  += -DDEBUG -g
 debug: $(NAME)
 
 clean:
