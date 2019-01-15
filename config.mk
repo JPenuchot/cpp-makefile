@@ -23,6 +23,6 @@ CXXFLAGS += -std=c++17
 CCFLAGS  += -std=c11
 
 # Includes/Libs
-CXXFLAGS  += -Iinclude
-CCFLAGS   += -Iinclude
-LDFLAGS   += -lm
+CXXFLAGS += -Iinclude
+CCFLAGS  += -Iinclude
+LDFLAGS  += -lm
